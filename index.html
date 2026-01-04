@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMS 4995 - Applied Machine Learning | Columbia University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Columbia University Color Palette */
+        /* Columbia University Color Palette - Refined & Dynamic */
         :root {
-            --columbia-blue: #B9D9EB;
-            --columbia-navy: #1e3a5f;
-            --columbia-light-blue: #C4D8E2;
+            --columbia-blue: #C4D8E2;
+            --columbia-navy: #1D3A5F;
+            --columbia-secondary: #75AADB;
+            --columbia-accent: #FFD700; /* Gold accent to break the blue */
             --columbia-white: #FFFFFF;
             --columbia-gray: #767676;
-            --columbia-dark-gray: #333333;
-            --accent-blue: #4A90E2;
+            --columbia-light-gray: #F8FAFC;
+            --columbia-dark-gray: #1E293B;
+            --accent-blue: #0072CE;
             --success-green: #10B981;
             --warning-orange: #F59E0B;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --hover-shadow: 0 12px 30px rgba(30, 58, 95, 0.1);
+            --gradient-primary: linear-gradient(135deg, #1D3A5F 0%, #2A4A7F 100%);
+            --gradient-subtle: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
         }
 
         * {
@@ -25,150 +34,153 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--columbia-dark-gray);
-            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+            background-color: #F1F5F9;
             min-height: 100vh;
         }
 
-        /* Header with subtle gradient */
+        /* Header with dynamic gradient and glassmorphism feel */
         header {
-            background: linear-gradient(135deg, var(--columbia-navy) 0%, #3d5a80 50%, #5e8ab8 100%);
+            background: var(--gradient-primary);
             color: white;
-            padding: 2.5rem 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 5rem 0;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
-        /* Subtle animated background pattern */
         header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(185, 217, 235, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(185, 217, 235, 0.15) 0%, transparent 50%);
+            top: -50%;
+            left: -10%;
+            width: 120%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(196, 216, 226, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-
-        .header-content {
-            text-align: center;
             position: relative;
             z-index: 1;
         }
 
         .course-title {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            letter-spacing: 1px;
-            color: white;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(to right, #FFFFFF, var(--columbia-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .course-subtitle {
-            font-size: 1.3rem;
-            font-weight: 300;
-            opacity: 0.95;
-            margin-bottom: 1rem;
-            color: white;
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            color: var(--columbia-blue);
+            letter-spacing: 0.05em;
         }
 
         .university-name {
-            font-size: 1.1rem;
-            font-weight: 400;
-            opacity: 0.9;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Navigation with smooth hover effects */
+        /* Sticky Navigation with blur effect */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
         .nav-menu {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 0.5rem;
             list-style: none;
-            padding: 0;
-            margin: 0;
+            padding: 0.75rem 0;
         }
 
         .nav-menu li a {
             color: var(--columbia-navy);
             text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            position: relative;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .nav-menu li a:hover {
-            background: rgba(30,58,95,0.06);
+            background: var(--columbia-navy);
+            color: white;
             transform: translateY(-1px);
         }
 
-        /* make nav container match header width and sit below header */
-        nav {
-            background: linear-gradient(to right, var(--columbia-blue), var(--columbia-light-blue));
-            border-bottom: 1px solid rgba(30,58,95,0.06);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Main Content */
+        /* Main Content Layout */
         main {
-            padding: 3rem 0;
+            padding: 4rem 0;
         }
 
         .content-grid {
             display: grid;
-            grid-template-columns: 3fr 450px;
-            gap: 2rem;
-            max-width: 1600px;
+            grid-template-columns: 1fr 360px;
+            gap: 3rem;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         .main-content {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
             overflow: hidden;
         }
 
         .sidebar {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .sidebar-card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
         }
 
         .sidebar-card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-6px);
+            box-shadow: var(--hover-shadow);
+            border-color: var(--columbia-blue);
         }
 
         .section {
-            padding: 2.5rem;
-            border-bottom: 1px solid #eee;
+            padding: 3.5rem;
+            border-bottom: 1px solid #F1F5F9;
         }
 
         .section:last-child {
@@ -177,351 +189,336 @@
 
         .section h2 {
             color: var(--columbia-navy);
-            font-size: 1.9rem;
-            margin-bottom: 1.2rem;
-            font-weight: 500;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .section h3 {
             color: var(--columbia-navy);
             font-size: 1.4rem;
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-            font-weight: 500;
+            margin-bottom: 1.25rem;
+            margin-top: 2.5rem;
+            font-weight: 700;
         }
 
-        /* Quick Info Cards */
+        /* Quick Info Cards - More colorful and dynamic */
         .quick-info {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .quick-info-card {
-            background: linear-gradient(135deg, var(--columbia-light-blue) 0%, rgba(196, 216, 226, 0.3) 100%);
-            padding: 1rem;
-            border-radius: 8px;
+            background: var(--gradient-subtle);
+            padding: 1.75rem;
+            border-radius: 20px;
             text-align: center;
+            border: 1px solid #E2E8F0;
             transition: all 0.3s ease;
-        }
-
-        .quick-info-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .quick-info-card .label {
-            font-size: 0.85rem;
-            color: var(--columbia-gray);
-            margin-bottom: 0.3rem;
-        }
-
-        .quick-info-card .value {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--columbia-navy);
-        }
-
-        /* Instructor Card Compact */
-        .instructor-mini {
-            background: linear-gradient(135deg, #e6e6fa 0%, #f0f0ff 100%);
-            color: var(--columbia-navy);
-            padding: 1rem 1.2rem;
-            border-radius: 8px;
-            text-align: left;
-            margin-bottom: 1.2rem;
-            box-shadow: none;
-            border: 1px solid var(--columbia-light-blue);
-            font-size: 1rem;
-        }
-
-        .instructor-mini h3 {
-            color: var(--columbia-navy);
-            font-size: 1.05rem;
-            margin-bottom: 0.5rem;
-            border: none;
-        }
-
-        .instructor-mini .name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-
-        .instructor-mini .affiliation {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            margin-bottom: 0.3rem;
-        }
-
-        .instructor-mini .email {
-            color: var(--columbia-navy);
-            text-decoration: underline dotted;
-            font-size: 0.9rem;
-        }
-
-        /* TA List Compact */
-        .ta-list {
-            list-style: none;
-        }
-
-        .ta-list li {
-            padding: 0.8rem 1rem;
-            background: var(--columbia-white);
-            border-left: 3px solid var(--columbia-blue);
-            margin-bottom: 0.5rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            color: var(--columbia-navy);
-        }
-
-        .ta-list li:hover {
-            background: var(--columbia-light-blue);
-            transform: translateX(2px);
-        }
-
-        .ta-list .name {
-            font-weight: 600;
-            color: var(--columbia-navy);
-            font-size: 0.95rem;
-        }
-
-        .ta-list .email {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-
-        /* Schedule Table */
-        .schedule-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 1rem;
-            border-radius: 8px;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
 
-        .schedule-table th {
-            background: linear-gradient(135deg, #3d5a80 0%, #5e8ab8 100%);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 500;
-        }
-
-        .schedule-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-            background: white;
-        }
-
-        .schedule-table tr:hover td {
-            background: linear-gradient(to right, #ffffff 0%, var(--columbia-light-blue) 100%);
-        }
-
-        .week-number {
-            font-weight: 600;
-            color: var(--columbia-navy);
-            font-size: 1.1rem;
-        }
-
-        /* Announcements */
-        .announcement {
-            background: linear-gradient(135deg, #fff4e6 0%, #ffe8cc 100%);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 3px solid var(--warning-orange);
+        .quick-info-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--columbia-blue);
+            transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
+        .quick-info-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--columbia-blue);
+            background: white;
+        }
+
+        .quick-info-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .quick-info-card .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--columbia-gray);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .quick-info-card .value {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--columbia-navy);
+        }
+
+        /* Schedule Table - Cleaner and more modern */
+        .schedule-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .schedule-table th {
+            color: var(--columbia-gray);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .schedule-table td {
+            padding: 1.5rem 1rem;
+            background: #F8FAFC;
+            vertical-align: middle;
+            transition: all 0.2s ease;
+        }
+
+        .schedule-table tr td:first-child { border-radius: 12px 0 0 12px; }
+        .schedule-table tr td:last-child { border-radius: 0 12px 12px 0; }
+
+        .schedule-table tr:hover td {
+            background-color: #EFF6FF;
+            color: var(--accent-blue);
+        }
+
+        .week-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: white;
+            color: var(--columbia-navy);
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Sidebar Headers */
+        .sidebar-card h3 {
+            color: var(--columbia-navy);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .sidebar-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 4px;
+            background: var(--columbia-blue);
+            border-radius: 2px;
+        }
+
+        /* Announcements - Using non-blue colors */
+        .announcement {
+            background: #FFFBEB;
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1.25rem;
+            border: 1px solid #FEF3C7;
+            transition: all 0.3s ease;
+        }
+
         .announcement:hover {
-            transform: translateX(-3px);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
         }
 
         .announcement-date {
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 800;
             color: var(--warning-orange);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .announcement.new {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border-left-color: var(--success-green);
+            background: #F0FDF4;
+            border-color: #DCFCE7;
         }
 
         .announcement.new .announcement-date {
             color: var(--success-green);
         }
 
-        /* Important Dates */
-        .important-dates {
-            background: linear-gradient(135deg, var(--columbia-light-blue) 0%, rgba(196, 216, 226, 0.3) 100%);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+        /* Instructor & TA List */
+        .instructor-mini {
+            margin-bottom: 2rem;
+            padding: 1.25rem;
+            background: var(--gradient-subtle);
+            border-radius: 16px;
         }
 
-        .date-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .date-item:last-child {
-            border-bottom: none;
-        }
-
-        .date-item .event {
-            font-weight: 600;
+        .instructor-mini .name {
+            font-weight: 800;
+            font-size: 1.2rem;
             color: var(--columbia-navy);
-            font-size: 0.9rem;
         }
 
-        .date-item .date {
-            color: var(--columbia-gray);
+        .ta-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .ta-list li {
+            padding: 1rem;
+            background: #F8FAFC;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .ta-list li:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transform: translateX(4px);
+        }
+
+        .ta-list .name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--columbia-navy);
+        }
+
+        .ta-list .email {
             font-size: 0.85rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            opacity: 0.8;
         }
 
-        /* Badge */
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            background: linear-gradient(135deg, var(--columbia-navy), var(--accent-blue));
-            color: white;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-        }
-
-        .badge.new {
-            background: linear-gradient(135deg, var(--success-green), #34d399);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        /* Quick Links */
+        /* Quick Links - More vibrant */
         .quick-links {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
         .quick-links a {
-            display: block;
-            padding: 0.8rem;
-            background: #f8f9fa;
-            border-radius: 6px;
+            background: white;
+            padding: 1rem;
+            border-radius: 16px;
             text-align: center;
-            color: var(--accent-blue);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .quick-links a:hover {
-            background: var(--columbia-light-blue);
-            transform: translateY(-2px);
-        }
-
-        /* Sidebar Headers */
-        .sidebar-card h3 {
             color: var(--columbia-navy);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--columbia-blue);
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 0.5rem;
         }
 
-        /* Grade Distribution */
+        .quick-links a:hover {
+            background: var(--columbia-navy);
+            color: white;
+            border-color: var(--columbia-navy);
+            transform: translateY(-4px);
+        }
+
+        /* Grade Distribution - Colorful */
         .grade-chart {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         .grade-bar {
-            flex: 1;
-            background: #f0f0f0;
-            border-radius: 20px;
-            height: 30px;
-            overflow: hidden;
             display: flex;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #F1F5F9;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .grade-segment {
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        .grade-segment:hover {
+            filter: brightness(1.1);
+            flex-grow: 1.1;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--columbia-navy), #2a4a7f);
+            background: var(--columbia-navy);
             color: white;
+            padding: 6rem 0;
             text-align: center;
-            padding: 2.5rem;
-            margin-top: 3rem;
+            margin-top: 6rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--columbia-blue), var(--columbia-accent), var(--columbia-blue));
         }
 
         footer p {
-            margin: 0.3rem 0;
-            opacity: 0.9;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            margin-top: 1rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 968px) {
+        /* Responsive */
+        @media (max-width: 1024px) {
             .content-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
-
-            .quick-info {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .nav-menu {
-                flex-wrap: wrap;
-                gap: 0.5rem;
+            .sidebar {
+                order: 2;
             }
         }
 
         @media (max-width: 640px) {
+            .section {
+                padding: 2.5rem 1.5rem;
+            }
             .course-title {
-                font-size: 2rem;
-            }
-
-            .quick-info {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-links {
-                grid-template-columns: 1fr;
+                font-size: 2.25rem;
             }
         }
 
-        /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
         }
@@ -530,16 +527,14 @@
 <body>
     <header>
         <div class="container">
-            <div class="header-content">
-                <h1 class="course-title"><b>Applied Machine Learning</b></h1>
-                <h1 class="course-subtitle">COMS4995W031</h1>
-                <p class="university-name">Columbia University • Spring 2026</p>
-            </div>
+            <h1 class="course-title">Applied Machine Learning</h1>
+            <h2 class="course-subtitle">COMS 4995 W031</h2>
+            <p class="university-name">Columbia University • Spring 2026</p>
         </div>
     </header>
 
     <nav>
-        <div class="nav-container">
+        <div class="container">
             <ul class="nav-menu">
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#schedule">Schedule</a></li>
@@ -679,7 +674,31 @@
                 <!-- Assignments & Grading -->
                 <section class="section" id="assignments">
                     <h2>✍️ Assignments & Grading</h2>
-                    <p>Assignments have been removed for the new course.</p>
+                    <div class="grade-chart">
+                        <div class="grade-bar">
+                            <div class="grade-segment" style="width: 5%; background: var(--columbia-gray);">5%</div>
+                            <div class="grade-segment" style="width: 30%; background: var(--columbia-secondary);">30%</div>
+                            <div class="grade-segment" style="width: 35%; background: var(--accent-blue);">35%</div>
+                            <div class="grade-segment" style="width: 30%; background: var(--success-green);">30%</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-around; margin-top: 1rem; font-size: 0.85rem; font-weight: 700;">
+                        <span style="color: var(--columbia-gray);">● Participation</span>
+                        <span style="color: var(--columbia-secondary);">● Midterm</span>
+                        <span style="color: var(--accent-blue);">● Homeworks</span>
+                        <span style="color: var(--success-green);">● Final Project</span>
+                    </div>
+                    
+                    <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">📝 Homeworks</h4>
+                            <p style="font-size: 0.9rem; color: var(--columbia-gray);">4-5 comprehensive assignments covering theory and implementation.</p>
+                        </div>
+                        <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">🚀 Final Project</h4>
+                            <p style="font-size: 0.9rem; color: var(--columbia-gray);">Build a state-of-the-art ML system or conduct original research.</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="section" id="policies">
@@ -711,7 +730,20 @@
                 <!-- Important Dates -->
                 <div class="sidebar-card">
                     <h3>📌 Important Dates</h3>
-                    <p>Important dates have been updated for the new course.</p>
+                    <div class="ta-list">
+                        <li>
+                            <div class="name">First Day of Class</div>
+                            <div class="email">Jan 26, 2026</div>
+                        </li>
+                        <li>
+                            <div class="name">Midterm Exam</div>
+                            <div class="email">TBD (March)</div>
+                        </li>
+                        <li>
+                            <div class="name">Final Project Due</div>
+                            <div class="email">May 2026</div>
+                        </li>
+                    </div>
                 </div>
 
                 <!-- Instructor -->
@@ -740,7 +772,10 @@
                             <div class="name">Shashwat Kumar</div>
                             <a href="mailto:sk5520@columbia.edu" class="email">sk5520@columbia.edu</a>
                         </li>
-                        <li>
+                     div class="announcement" style="background: #F8FAFC; border-color: #E2E8F0; padding: 1rem;">
+                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--columbia-navy);">Schedule coming soon!</p>
+                        <p style="font-size: 0.8rem; color: var(--columbia-gray);">Check back after the first week of classes.</p>
+                    </div
                             <div class="name">Jiayi Niu</div>
                             <a href="mailto:jn2941@columbia.edu" class="email">jn2941@columbia.edu</a>
                         </li>
