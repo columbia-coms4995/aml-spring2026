@@ -165,8 +165,8 @@
 
         .content-grid {
             display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 3rem;
+            grid-template-columns: 1fr 340px;
+            gap: 2.5rem;
             max-width: 1600px;
             margin: 0 auto;
             padding: 0 3rem;
@@ -591,7 +591,7 @@
     <header>
         <div class="container">
             <h1 class="course-title">Applied Machine Learning</h1>
-            <h2 class="course-subtitle">COMS 4995 W31</h2>
+            <h2 class="course-subtitle">COMS4995W031</h2>
             <p class="university-name">Columbia University • Spring 2026</p>
         </div>
     </header>
@@ -618,7 +618,7 @@
                     <div class="quick-info">
                         <div class="quick-info-card">
                             <div class="label">📅 Schedule</div>
-                            <div class="value">Mon 4:10 PM - 6:40 PM</div>
+                            <div class="value">Mon<br>4:10 - 6:40 PM</div>
                         </div>
                         <div class="quick-info-card">
                             <div class="label">📍 Location</div>
@@ -639,21 +639,21 @@
 
                     <p style="margin-top: 1rem;">This course bridges the gap between algorithms and production. We begin with the <b>"Classic Stack"</b> (Linear Models, Trees) and move to the <b>"Modern GenAI Stack"</b> (LLMs, RAG, Agents). Unlike theoretical courses, we emphasize problem framing, system design, and failure analysis. We treat models not as mathematical artifacts, but as powerful components to be fine-tuned, chained, and deployed to survive real-world traffic.</p>
 
-                    <div style="margin-top: 2rem; background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); padding: 1.75rem; border-radius: 16px; border-left: 4px solid var(--columbia-navy);">
-                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem; font-size: 1.1rem;">💡 Note on Deep Learning & Math</h4>
-                        <p style="font-size: 1rem; color: var(--columbia-dark-gray);">This course prioritizes Deep Learning and LLMs as the core of modern ML engineering. We cover mathematical foundations specifically to ensure a "white-box" understanding necessary for debugging and optimization, focusing on <b>applied engineering logic</b> rather than theoretical derivation.</p>
-                    </div>
-
-                    <div style="margin-top: 1.5rem; background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 1.75rem; border-radius: 16px; border-left: 4px solid var(--accent-amber);">
-                        <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem; font-size: 1.1rem;">💬 Note from the Instructor</h4>
-                        <p style="font-size: 1rem; color: var(--columbia-dark-gray);">My goal for this course is simple: <b>to bridge the gap between academic theory and the reality of shipping AI at scale</b>. As a practitioner leading various cutting-edge projects, I have designed this curriculum to simulate the rigorous standards of a top-tier tech environment.</p>
-                        <p style="font-size: 1rem; color: var(--columbia-dark-gray); margin-top: 1rem;">You will find some policies in this syllabus strictly enforced (e.g., code quality, system design constraints). <b>Please understand that this rigor is not meant to penalize you, but to prepare you.</b> I want you to make mistakes here - in a safe, supportive classroom - so you do <b>not</b> make them in your technical interviews. My TA team and I are fully committed to your success and are here to help you land your dream offer in this competitive market.</p>
+                    <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                        <div style="background: #F8FAFC; padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--columbia-navy);">
+                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem; font-size: 1rem;">💡 Note on Deep Learning & Math</h4>
+                            <p style="font-size: 0.9rem; color: var(--columbia-dark-gray); line-height: 1.6;">This course prioritizes Deep Learning and LLMs as the core of modern ML engineering. We cover mathematical foundations to ensure a "white-box" understanding for debugging and optimization, focusing on <b>applied engineering logic</b> rather than theoretical derivation.</p>
+                        </div>
+                        <div style="background: #FFFBF5; padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--accent-amber);">
+                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem; font-size: 1rem;">💬 Note from the Instructor</h4>
+                            <p style="font-size: 0.9rem; color: var(--columbia-dark-gray); line-height: 1.6;">My goal is to <b>bridge academic theory and shipping AI at scale</b>. Some policies are strictly enforced - <b>this rigor is not to penalize you, but to prepare you</b>. Make mistakes here so you don't make them in interviews. My TA team and I are fully committed to helping you land your dream offer in this competitive market.</p>
+                        </div>
                     </div>
 
                     <h3>🎯 Learning Objectives</h3>
                     <ul style="margin-left: 1.5rem; margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
                         <li><b>Problem Formulation:</b> Translate ambiguous business requirements into well-defined ML tasks</li>
-                        <li><b>System Reliability & Failure Analysis:</b> Understand why models fail in production (Data Leakage, Feedback Loops, Reward Hacking)</li>
+                        <li><b>System Reliability & Failure Analysis:</b> Understand why models fail in production </li>
                         <li><b>Modern GenAI Stack:</b> Implement RAG systems, perform SFT, and design LLM Agents</li>
                         <li><b>Classic ML Proficiency:</b> Master feature engineering, pipeline construction, and error analysis using scikit-learn</li>
                         <li><b>Engineering Rigor:</b> Utilize AI coding assistants effectively to ship production-ready code</li>
@@ -664,7 +664,7 @@
                         <li><b>Programming:</b> Proficiency in Python 3 with data manipulation (pandas, numpy, pytorch)</li>
                         <li><b>Mathematics:</b> Linear Algebra (vector/matrix operations) and Statistics (probability, distributions)</li>
                         <li><b>Tooling:</b> Familiarity with AI coding assistants is strongly recommended</li>
-                        <li><b>Mindset:</b> Willingness to adapt - the ML field changes monthly!</li>
+                        <li><b>Mindset:</b> Willingness to adapt - the ML field changes weekly!</li>
                     </ul>
                 </section>
 
@@ -676,7 +676,7 @@
                             <tr>
                                 <th width="5%">Week</th>
                                 <th width="70%">Topic</th>
-                                <th width="25%">Assignment</th>
+                                <th width="25%">Materials</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -694,7 +694,7 @@
                                 <td><span class="week-number">3</span></td>
                                 <td><strong>Linear Models</strong><br>
                                 <span style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry Case: Why Linear Regression is still widely used in Ads</span></td>
-                                <td><span style="color: var(--success-green); font-weight: 700;">HW1 Out</span></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td><span class="week-number">4</span></td>
@@ -716,7 +716,7 @@
                             <tr>
                                 <td><span class="week-number">7</span></td>
                                 <td><strong>Neural Networks Fundamentals</strong></td>
-                                <td><span style="color: var(--success-green); font-weight: 700;">HW2 Out</span></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td><span class="week-number">8</span></td>
@@ -732,7 +732,7 @@
                             <tr>
                                 <td><span class="week-number">10</span></td>
                                 <td><strong>RAG & Vector Databases</strong></td>
-                                <td><span style="color: var(--success-green); font-weight: 700;">HW3 Out</span></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td><span class="week-number">11</span></td>
@@ -758,15 +758,6 @@
 
             <!-- Enhanced Sidebar -->
             <div class="sidebar">
-                <!-- Announcements -->
-                <div class="sidebar-card">
-                    <h3>📢 Announcements</h3>
-                    <div class="announcement new">
-                        <div class="announcement-date">🆕 Jan 4, 2026</div>
-                        <p>Welcome to AML!<br> First class Monday 4:10 PM.</p>
-                    </div>
-                </div>
-
                 <!-- Important Dates -->
                 <div class="sidebar-card">
                     <h3>📌 Important Dates</h3>
@@ -776,8 +767,20 @@
                             <div class="email">Jan 26, 2026</div>
                         </li>
                         <li>
+                            <div class="email">Assignment 1</div>
+                            <div class="email">Week 3</div>
+                        </li>
+                        <li>
                             <div class="name">Midterm Exam</div>
                             <div class="email">Mar 2, 2026</div>
+                        </li>
+                        <li>
+                            <div class="name">Assignment 2 Released</div>
+                            <div class="email">Week 7</div>
+                        </li>
+                        <li>
+                            <div class="name">Assignment 3 Released</div>
+                            <div class="email">Week 10</div>
                         </li>
                         <li>
                             <div class="name">Final Exam</div>
@@ -899,31 +902,23 @@
             <section class="section full-width-section" id="policies">
                 <h2>📜 Course Policies</h2>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                    <div>
-                        <h3>Zoom Support</h3>
-                        <p>Lectures will be streamed via Zoom and recorded on a <b>"best effort" basis</b>. Technical failures may result in the loss of both the live stream and the recording.</p>
-                        <p style="margin-top: 0.5rem;"><b>Recommendation:</b> We strongly recommend attending in-person to guarantee access to the material.</p>
+                <h3>Zoom Support</h3>
+                <p>Lectures will be streamed via Zoom and recorded on a <b>"best effort" basis</b>. Technical failures may result in the loss of both the live stream and the recording. <b>Recommendation:</b> We strongly recommend attending in-person to guarantee access to the material.</p>
 
-                        <h3>Attendance</h3>
-                        <p>Attendance is <b>optional and not graded</b>. We treat you as adults; you do not need to email the instructor to report or explain absences.</p>
+                <h3>Attendance</h3>
+                <p>Attendance is <b>optional and not graded</b>. We treat you as adults; you do not need to email the instructor to report or explain absences.</p>
 
-                        <h3>Late Work</h3>
-                        <p>Late submissions will be accepted up to <b>24 hours</b> after the original deadline with a <b>10% penalty</b>. Work submitted more than 24 hours past the deadline will <b>not be accepted</b>.</p>
-                        <p style="margin-top: 0.5rem;"><b>Exceptions:</b> We understand that life happens. Please submit a request via the Google Form (announced in Ed) <b>before the deadline</b>.</p>
-                    </div>
-                    <div>
-                        <h3>Re-grading</h3>
-                        <p>Regrade requests must be submitted in writing to the TAs <b>within one week</b> of the grade release. Note that requesting a regrade triggers a <b>full review</b> of your assignment.</p>
+                <h3>Late Work</h3>
+                <p>Late submissions will be accepted up to <b>24 hours</b> after the original deadline with a <b>10% penalty</b>. Work submitted more than 24 hours past the deadline will <b>not be accepted</b>. <b>Exceptions:</b> We understand that life happens. Please submit a request via the Google Form (announced in Ed) <b>before the deadline</b>.</p>
 
-                        <h3>AI Policy</h3>
-                        <p>Use of AI tools (ChatGPT, Claude, Gemini, etc.) is <b>fully permitted</b> for all assignments. You are expected to verify AI-generated outputs. Code that crashes or logic that fails will be graded accordingly.</p>
-                        <p style="margin-top: 0.5rem;">While AI tools are permitted, <b>plagiarism of other students' work is strictly prohibited</b>. You are personally responsible for the accuracy and logic of your submissions.</p>
+                <h3>Re-grading</h3>
+                <p>Regrade requests must be submitted in writing to the TAs <b>within one week</b> of the grade release. Note that requesting a regrade triggers a <b>full review</b> of your assignment.</p>
 
-                        <h3>♿ Accessibility</h3>
-                        <p>If you have been certified by Disability Services (ODS), please contact <b>Robert Kramer</b> at <a href="mailto:rk3281@columbia.edu">rk3281@columbia.edu</a> to arrange accommodations. Once confirmed with DSI, notify the TAs so we can update exam timer settings.</p>
-                    </div>
-                </div>
+                <h3>AI Policy</h3>
+                <p>Use of AI tools (ChatGPT, Claude, Gemini, etc.) is <b>fully permitted</b> for all assignments. You are expected to verify AI-generated outputs. Code that crashes or logic that fails will be graded accordingly. While AI tools are permitted, <b>plagiarism of other students' work is strictly prohibited</b>. You are personally responsible for the accuracy and logic of your submissions.</p>
+
+                <h3>♿ Accessibility</h3>
+                <p>If you have been certified by Disability Services (ODS), please contact <b>Robert Kramer</b> at <a href="mailto:rk3281@columbia.edu">rk3281@columbia.edu</a> to arrange accommodations. Once confirmed with DSI, notify the TAs so we can update exam timer settings.</p>
             </section>
 
             <!-- Final Thoughts -->
@@ -938,7 +933,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Columbia University - Applied Machine Learning</p>
-            <p>COMS 4995 W31 | Spring 2026</p>
+            <p>COMS 4995W031 | Spring 2026</p>
         </div>
     </footer>
 </body>
