@@ -70,23 +70,6 @@
             animation: gentleRotate 40s linear infinite;
         }
 
-        /* Totoro decoration in header */
-        header::after {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 50px;
-            width: 250px;
-            height: 180px;
-            opacity: 0.25;
-            background-image: url('https://i.imgur.com/8pTpHKd.gif');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            z-index: 1;
-            pointer-events: none;
-        }
-
         @keyframes gentleRotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
