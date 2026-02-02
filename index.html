@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMS 4995 - Applied Machine Learning | Columbia University</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         /* Columbia University - Minimalist Japanese Design */
         :root {
@@ -71,8 +74,13 @@
         }
 
         @keyframes gentleRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .container {
@@ -306,8 +314,13 @@
             font-size: 1.125rem;
         }
 
-        .schedule-table tr td:first-child { border-radius: 12px 0 0 12px; }
-        .schedule-table tr td:last-child { border-radius: 0 12px 12px 0; }
+        .schedule-table tr td:first-child {
+            border-radius: 12px 0 0 12px;
+        }
+
+        .schedule-table tr td:last-child {
+            border-radius: 0 12px 12px 0;
+        }
 
         .schedule-table tr:hover td {
             background-color: #EFF6FF;
@@ -352,6 +365,23 @@
             gap: 0.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--columbia-light-blue);
+        }
+
+        /* Office Hours: slightly smaller text */
+        .office-hours-card p {
+            font-size: 0.95rem;
+        }
+
+        .office-hours-card .ta-list li {
+            font-size: 0.95rem;
+        }
+
+        .office-hours-card .name {
+            font-size: 0.9rem;
+        }
+
+        .office-hours-card .email {
+            font-size: 0.8rem;
         }
 
         /* Minimalist Announcements */
@@ -418,7 +448,7 @@
 
         .ta-list li:hover {
             background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transform: translateX(4px);
         }
 
@@ -477,7 +507,7 @@
             border-radius: 20px;
             overflow: hidden;
             background: #F1F5F9;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .grade-segment {
@@ -539,6 +569,7 @@
             .content-grid {
                 grid-template-columns: 1fr;
             }
+
             .sidebar {
                 order: 2;
             }
@@ -548,6 +579,7 @@
             .section {
                 padding: 2.5rem 1.5rem;
             }
+
             .course-title {
                 font-size: 2.25rem;
             }
@@ -562,7 +594,7 @@
             color: var(--accent-teal);
             text-decoration: none;
             transition: color 0.2s ease;
-            font-style: italic;
+            font-style: normal;
         }
 
         a:hover {
@@ -576,6 +608,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -603,7 +636,7 @@
                 <!-- Course Overview - Simplified -->
                 <section class="section" id="overview">
                     <h2>📚 Course Overview</h2>
-                    
+
                     <div class="quick-info">
                         <div class="quick-info-card">
                             <div class="label">📅 Schedule</div>
@@ -624,34 +657,58 @@
                     </div>
 
                     <h3>About This Course</h3>
-                    <p><b>Applied Machine Learning</b> is not just about training models on clean datasets. In practice, ML systems operate inside complex, messy environments shaped by delayed feedback, data drift, and business constraints.</p>
+                    <p><b>Applied Machine Learning</b> is not just about training models on clean datasets. In practice,
+                        ML systems operate inside complex, messy environments shaped by delayed feedback, data drift,
+                        and business constraints.</p>
 
-                    <p style="margin-top: 1rem;">This course bridges the gap between algorithms and production. We begin with the <b>"Classic Stack"</b> (Linear Models, Trees) and move to the <b>"Modern GenAI Stack"</b> (LLMs, RAG, Agents). Unlike theoretical courses, we emphasize problem framing, system design, and failure analysis. We treat models not as mathematical artifacts, but as powerful components to be fine-tuned, chained, and deployed to survive real-world traffic.</p>
+                    <p style="margin-top: 1rem;">This course bridges the gap between algorithms and production. We begin
+                        with the <b>"Classic Stack"</b> (Linear Models, Trees) and move to the <b>"Modern GenAI
+                            Stack"</b> (LLMs, RAG, Agents). Unlike theoretical courses, we emphasize problem framing,
+                        system design, and failure analysis. We treat models not as mathematical artifacts, but as
+                        powerful components to be fine-tuned, chained, and deployed to survive real-world traffic.</p>
 
                     <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
-                        <div style="background: #F8FAFC; padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--columbia-navy);">
-                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem; font-size: 1rem;">💡 Note on Deep Learning & Math</h4>
-                            <p style="font-size: 0.9rem; color: var(--columbia-dark-gray); line-height: 1.6;">This course prioritizes Deep Learning and LLMs as the core of modern ML engineering. We cover mathematical foundations to ensure a "white-box" understanding for debugging and optimization, focusing on <b>applied engineering logic</b> rather than theoretical derivation.</p>
+                        <div
+                            style="background: #F8FAFC; padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--columbia-navy);">
+                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem; font-size: 1rem;">💡 Note on
+                                Deep Learning & Math</h4>
+                            <p style="font-size: 0.9rem; color: var(--columbia-dark-gray); line-height: 1.6;">This
+                                course prioritizes Deep Learning and LLMs as the core of modern ML engineering. We cover
+                                mathematical foundations to ensure a "white-box" understanding for debugging and
+                                optimization, focusing on <b>applied engineering logic</b> rather than theoretical
+                                derivation.</p>
                         </div>
-                        <div style="background: #FFFBF5; padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--accent-amber);">
-                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem; font-size: 1rem;">💬 Note from the Instructor</h4>
-                            <p style="font-size: 0.9rem; color: var(--columbia-dark-gray); line-height: 1.6;">My goal is to <b>bridge academic theory and shipping AI at scale</b>. Some policies are strictly enforced - <b>this rigor is not to penalize you, but to prepare you</b>. Make mistakes here so you don't make them in interviews. My TA team and I are fully committed to helping you land your dream offer in this competitive market.</p>
+                        <div
+                            style="background: #FFFBF5; padding: 1.25rem; border-radius: 12px; border-left: 3px solid var(--accent-amber);">
+                            <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem; font-size: 1rem;">💬 Note
+                                from the Instructor</h4>
+                            <p style="font-size: 0.9rem; color: var(--columbia-dark-gray); line-height: 1.6;">My goal is
+                                to <b>bridge academic theory and shipping AI at scale</b>. Some policies are strictly
+                                enforced - <b>this rigor is not to penalize you, but to prepare you</b>. Make mistakes
+                                here so you don't make them in interviews. My TA team and I are fully committed to
+                                helping you land your dream offer in this competitive market.</p>
                         </div>
                     </div>
 
                     <h3>🎯 Learning Objectives</h3>
-                    <ul style="margin-left: 1.5rem; margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
-                        <li><b>Problem Formulation:</b> Translate ambiguous business requirements into well-defined ML tasks</li>
+                    <ul
+                        style="margin-left: 1.5rem; margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
+                        <li><b>Problem Formulation:</b> Translate ambiguous business requirements into well-defined ML
+                            tasks</li>
                         <li><b>System Reliability & Failure Analysis:</b> Understand why models fail in production </li>
                         <li><b>Modern GenAI Stack:</b> Implement RAG systems, perform SFT, and design LLM Agents</li>
-                        <li><b>Classic ML Proficiency:</b> Master feature engineering, pipeline construction, and error analysis using scikit-learn</li>
-                        <li><b>Engineering Rigor:</b> Utilize AI coding assistants effectively to ship production-ready code</li>
+                        <li><b>Classic ML Proficiency:</b> Master feature engineering, pipeline construction, and error
+                            analysis using scikit-learn</li>
+                        <li><b>Engineering Rigor:</b> Utilize AI coding assistants effectively to ship production-ready
+                            code</li>
                     </ul>
 
                     <h3>🧩 Prerequisites</h3>
                     <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                        <li><b>Programming:</b> Proficiency in Python 3 with data manipulation (pandas, numpy, pytorch)</li>
-                        <li><b>Mathematics:</b> Linear Algebra (vector/matrix operations) and Statistics (probability, distributions)</li>
+                        <li><b>Programming:</b> Proficiency in Python 3 with data manipulation (pandas, numpy, pytorch)
+                        </li>
+                        <li><b>Mathematics:</b> Linear Algebra (vector/matrix operations) and Statistics (probability,
+                            distributions)</li>
                         <li><b>Tooling:</b> Familiarity with AI coding assistants is strongly recommended</li>
                         <li><b>Mindset:</b> Willingness to adapt - the ML field changes weekly!</li>
                     </ul>
@@ -672,7 +729,8 @@
                             <tr>
                                 <td><span class="week-number">1</span></td>
                                 <td><strong>Introduction to Applied Machine Learning</strong></td>
-                                <td><a href="materials/[COMS4995W31 AML] L1 - Introduction to Machine Learning.pdf" target="_blank">📖 Slides</a></td>
+                                <td><a href="materials/[COMS4995W31 AML] L1 - Introduction to Machine Learning.pdf"
+                                        target="_blank">📖 Slides</a></td>
                             </tr>
                             <tr>
                                 <td><span class="week-number">2</span></td>
@@ -680,13 +738,17 @@
                                 <td>
                                     <a href="materials/[COMS4995W31 AML] L2 - Data.pdf" target="_blank">📖 Slides</a>
                                     &nbsp;•&nbsp;
-                                    <a href="https://colab.research.google.com/drive/1Dg0r5i_-ONC2hAf9MNMFox7_IB2UMCNH?usp=sharing" target="_blank">💻 Colab</a>
+                                    <a href="https://colab.research.google.com/drive/1Dg0r5i_-ONC2hAf9MNMFox7_IB2UMCNH?usp=sharing"
+                                        target="_blank">💻 Colab</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span class="week-number">3</span></td>
                                 <td><strong>Linear Models</strong><br>
-                                <span style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry Case: Why Linear Regression is still widely used in Ads</span></td>
+                                    <span
+                                        style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry
+                                        Case: Why Linear Regression is still widely used in Ads</span>
+                                </td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -697,7 +759,10 @@
                             <tr>
                                 <td><span class="week-number">5</span></td>
                                 <td><strong>Tree-based Models & Ensembles</strong><br>
-                                <span style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry Case: Why Trees outperform Neural Nets on tabular data</span></td>
+                                    <span
+                                        style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry
+                                        Case: Why Trees outperform Neural Nets on tabular data</span>
+                                </td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -713,7 +778,10 @@
                             <tr>
                                 <td><span class="week-number">8</span></td>
                                 <td><strong>Transformers in Practice</strong><br>
-                                <span style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry Case: Balancing model size vs. low latency</span></td>
+                                    <span
+                                        style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry
+                                        Case: Balancing model size vs. low latency</span>
+                                </td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -729,7 +797,10 @@
                             <tr>
                                 <td><span class="week-number">11</span></td>
                                 <td><strong>LLM Agents & Tool Use</strong><br>
-                                <span style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry Case: Why Agents get stuck and how to add guardrails</span></td>
+                                    <span
+                                        style="font-size: 0.85rem; color: var(--accent-blue); font-style: italic;">Industry
+                                        Case: Why Agents get stuck and how to add guardrails</span>
+                                </td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -820,22 +891,46 @@
                     </ul>
                 </div>
                 <!-- Office Hours -->
-                <div class="sidebar-card">
+                <div class="sidebar-card office-hours-card">
                     <h3>🕐 Office Hours</h3>
-                    <p><b>TA Office Hours:</b> TBD, updated on <a href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed</a></p>
-                    <p style="margin-top: 0.5rem;"><b>Optional Recitation:</b> TA-led sessions for coding and math refreshers</p>
+                    <p><b>Location:</b> Data Science Institute lounge</p>
+                    <ul class="ta-list">
+                        <li>
+                            <div class="name">Zoga Duka</div>
+                            <div class="email">Tuesday - 3:00–5:00 PM</div>
+                        </li>
+                        <li>
+                            <div class="name">Grace Yoon</div>
+                            <div class="email">Wednesday - 4:45–6:45 PM</div>
+                        </li>
+                        <li>
+                            <div class="name">Case Hallowell Schemmer</div>
+                            <div class="email">Thursday - 4:30–6:30 PM</div>
+                        </li>
+                        <li>
+                            <div class="name">Prajwal Raghunath</div>
+                            <div class="email">Friday - 2:00–4:00 PM</div>
+                        </li>
+                    </ul>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--columbia-gray);">Any changes will be
+                        posted on <a href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed</a>.</p>
                 </div>
 
                 <!-- Resources Sidebar -->
                 <div class="sidebar-card" id="resources">
                     <h3>📖 Resources</h3>
-                    <h4 style="color: var(--columbia-navy); font-size: 1rem; margin-bottom: 1rem; font-weight: 700;">Recommended Textbooks</h4>
+                    <h4 style="color: var(--columbia-navy); font-size: 1rem; margin-bottom: 1rem; font-weight: 700;">
+                        Recommended Textbooks</h4>
                     <ul style="margin-left: 1.2rem; display: flex; flex-direction: column; gap: 1rem;">
                         <li style="line-height: 1.5;">
-                            <strong><a href="https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/" target="_blank">Designing Machine Learning Systems</a></strong> - C. Huyen<br>
+                            <strong><a
+                                    href="https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/"
+                                    target="_blank">Designing Machine Learning Systems</a></strong> - C. Huyen<br>
                         </li>
                         <li style="line-height: 1.5;">
-                            <strong><a href="https://www.manning.com/books/build-a-large-language-model-from-scratch" target="_blank">Build a Large Language Model (From Scratch)</a></strong> - S. Raschka<br>
+                            <strong><a href="https://www.manning.com/books/build-a-large-language-model-from-scratch"
+                                    target="_blank">Build a Large Language Model (From Scratch)</a></strong> - S.
+                            Raschka<br>
                         </li>
                     </ul>
                 </div>
@@ -854,43 +949,66 @@
                         <div class="grade-segment" style="width: 20%; background: #6366F1;">20%</div>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-around; margin-top: 1rem; font-size: 0.9rem; font-weight: 700;">
+                <div
+                    style="display: flex; justify-content: space-around; margin-top: 1rem; font-size: 0.9rem; font-weight: 700;">
                     <span style="color: #10B981;">● Homework Assignments (60%)</span>
                     <span style="color: #F59E0B;">● Midterm Exam (20%)</span>
                     <span style="color: #6366F1;">● Final Exam (20%)</span>
                 </div>
 
                 <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-                    <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                    <div
+                        style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
                         <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">📝 Homeworks (60%)</h4>
-                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">3 comprehensive assignments covering feature engineering, modeling, and evaluation.<br>Submit code repository + brief summary.</p>
+                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">3 comprehensive assignments covering
+                            feature engineering, modeling, and evaluation.<br>Submit code repository + brief summary.
+                        </p>
                     </div>
-                    <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                    <div
+                        style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
                         <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">💪 Midterm (20%)</h4>
-                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering fundamental concepts from the first half of the course.</p>
+                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering
+                            fundamental concepts from the first half of the course.</p>
                     </div>
-                    <div style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
+                    <div
+                        style="background: var(--gradient-subtle); padding: 1.5rem; border-radius: 20px; border: 1px solid #E2E8F0;">
                         <h4 style="color: var(--columbia-navy); margin-bottom: 0.5rem;">🎯 Final Exam (20%)</h4>
-                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering advanced concepts and holistic understanding of the material.</p>
+                        <p style="font-size: 0.9rem; color: var(--columbia-gray);">In-class, closed-book exam covering
+                            advanced concepts and holistic understanding of the material.</p>
                     </div>
                 </div>
 
                 <h3 style="margin-top: 3rem;">Homework Requirements</h3>
-                <div style="background: #F8FAFC; padding: 2rem; border-radius: 16px; border-left: 4px solid var(--columbia-navy); margin-top: 1.5rem;">
-                    <p style="margin-bottom: 1rem;"><b>Deliverables:</b> For each assignment, you must submit a code repository and a brief summary of your results and findings.</p>
-                    <p style="margin-bottom: 1rem;"><b>AI Policy:</b> Use of AI tools is <b>fully permitted</b> for both code and documentation. You are responsible for ensuring the final output is correct and runnable.</p>
-                    <p style="margin-bottom: 1rem;"><b>Code:</b> Must be easily accessible via a runnable link (e.g., Google Colab, GitHub). <b style="color: var(--accent-coral);">Screenshots of code are not accepted and will receive a grade of 0.</b></p>
-                    <p><b>Reports:</b> Summary of results should include visualizations and written explanations as outlined in each assignment.</p>
+                <div
+                    style="background: #F8FAFC; padding: 2rem; border-radius: 16px; border-left: 4px solid var(--columbia-navy); margin-top: 1.5rem;">
+                    <p style="margin-bottom: 1rem;"><b>Deliverables:</b> For each assignment, you must submit a code
+                        repository and a brief summary of your results and findings.</p>
+                    <p style="margin-bottom: 1rem;"><b>AI Policy:</b> Use of AI tools is <b>fully permitted</b> for both
+                        code and documentation. You are responsible for ensuring the final output is correct and
+                        runnable.</p>
+                    <p style="margin-bottom: 1rem;"><b>Code:</b> Must be easily accessible via a runnable link (e.g.,
+                        Google Colab, GitHub). <b style="color: var(--accent-coral);">Screenshots of code are not
+                            accepted and will receive a grade of 0.</b></p>
+                    <p><b>Reports:</b> Summary of results should include visualizations and written explanations as
+                        outlined in each assignment.</p>
                 </div>
 
                 <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                     <div style="background: #FFFBEB; padding: 1.5rem; border-radius: 20px; border: 1px solid #FEF3C7;">
                         <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem;">📊 Grading Scale & Curve</h4>
-                        <p style="font-size: 0.95rem; color: var(--columbia-dark-gray);">Final letter grades will be determined based on your performance <b>relative to the class distribution</b>. We do not use fixed percentage buckets. The instructor reserves the right to apply an overall curve based on the collective performance of the class.</p>
+                        <p style="font-size: 0.95rem; color: var(--columbia-dark-gray);">Final letter grades will be
+                            determined based on your performance <b>relative to the class distribution</b>. We do not
+                            use fixed percentage buckets. The instructor reserves the right to apply an overall curve
+                            based on the collective performance of the class.</p>
                     </div>
-                    <div style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); padding: 1.5rem; border-radius: 20px; border: 1px solid #A7F3D0;">
+                    <div
+                        style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); padding: 1.5rem; border-radius: 20px; border: 1px solid #A7F3D0;">
                         <h4 style="color: var(--columbia-navy); margin-bottom: 0.75rem;">📋 Scope of Assessments</h4>
-                        <p style="font-size: 0.95rem; color: var(--columbia-dark-gray);">Students are responsible for all material: lectures, slides, homework, readings, code examples, case studies, and <a href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed</a> posts. <b>That said, we are not here to trick you.</b> Our exams prioritize <b>deep engineering intuition</b> over trivial memorization.</p>
+                        <p style="font-size: 0.95rem; color: var(--columbia-dark-gray);">Students are responsible for
+                            all material: lectures, slides, homework, readings, code examples, case studies, and <a
+                                href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed</a> posts.
+                            <b>That said, we are not here to trick you.</b> Our exams prioritize <b>deep engineering
+                                intuition</b> over trivial memorization.</p>
                     </div>
                 </div>
             </section>
@@ -900,33 +1018,54 @@
                 <h2>📜 Course Policies</h2>
 
                 <h3>Zoom Support</h3>
-                <p>Lectures will be streamed via Zoom and recorded on a <b>"best effort" basis</b>. Technical failures may result in the loss of both the live stream and the recording. <b>Recommendation:</b> We strongly recommend attending in-person to guarantee access to the material.</p>
+                <p>Lectures will be streamed via Zoom and recorded on a <b>"best effort" basis</b>. Technical failures
+                    may result in the loss of both the live stream and the recording. <b>Recommendation:</b> We strongly
+                    recommend attending in-person to guarantee access to the material.</p>
 
                 <h3>Attendance</h3>
-                <p>Attendance is <b>optional and not graded</b>. We treat you as adults; you do not need to email the instructor to report or explain absences.</p>
+                <p>Attendance is <b>optional and not graded</b>. We treat you as adults; you do not need to email the
+                    instructor to report or explain absences.</p>
 
                 <h3>Late Work</h3>
-                <p>Late submissions will be accepted up to <b>24 hours</b> after the original deadline with a <b>10% penalty</b>. Work submitted more than 24 hours past the deadline will <b>not be accepted</b>. <b>Exceptions:</b> We understand that life happens. Please submit a request via the Google Form (announced in <a href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed</a>) <b>before the deadline</b>.</p>
+                <p>Late submissions will be accepted up to <b>24 hours</b> after the original deadline with a <b>10%
+                        penalty</b>. Work submitted more than 24 hours past the deadline will <b>not be accepted</b>.
+                    <b>Exceptions:</b> We understand that life happens. Please submit a request via the Google Form
+                    (announced in <a href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed</a>)
+                    <b>before the deadline</b>.</p>
 
                 <h3>Re-grading</h3>
-                <p>Regrade requests must be submitted in writing to the TAs <b>within 1 week</b> of the grade release. Note that requesting a regrade triggers a <b>full review</b> of your assignment.</p>
+                <p>Regrade requests must be submitted in writing to the TAs <b>within 1 week</b> of the grade release.
+                    Note that requesting a regrade triggers a <b>full review</b> of your assignment.</p>
 
                 <h3>AI Policy</h3>
-                <p>Use of AI tools (ChatGPT, Claude, Gemini, etc.) is <b>fully permitted</b> for all assignments. You are expected to verify AI-generated outputs. Code that crashes or logic that fails will be graded accordingly. While AI tools are permitted, <b>plagiarism of other students' work is strictly prohibited</b>. You are personally responsible for the accuracy and logic of your submissions.</p>
+                <p>Use of AI tools (ChatGPT, Claude, Gemini, etc.) is <b>fully permitted</b> for all assignments. You
+                    are expected to verify AI-generated outputs. Code that crashes or logic that fails will be graded
+                    accordingly. While AI tools are permitted, <b>plagiarism of other students' work is strictly
+                        prohibited</b>. You are personally responsible for the accuracy and logic of your submissions.
+                </p>
 
                 <h3>♿ Accessibility</h3>
-                <p>If you have been certified by Disability Services (ODS), please contact <b>Robert Kramer</b> (<a href="mailto:rk3281@columbia.edu">rk3281@columbia.edu</a>) to arrange accommodations. Once confirmed with DSI, notify the TAs so we can update exam timer settings.</p>
+                <p>If you have been certified by Disability Services (ODS), please contact <b>Robert Kramer</b> (<a
+                        href="mailto:rk3281@columbia.edu">rk3281@columbia.edu</a>) to arrange accommodations. Once
+                    confirmed with DSI, notify the TAs so we can update exam timer settings.</p>
 
                 <h3>💬 Communication</h3>
-                <p>All class discussions, technical questions, and clarifications should be handled on <b><a href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed Discussion</a></b>. This ensures streamlined support for everyone. Please reserve email solely for sensitive personal matters not covered by the extension form.</p>
+                <p>All class discussions, technical questions, and clarifications should be handled on <b><a
+                            href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed Discussion</a></b>.
+                    This ensures streamlined support for everyone. Please reserve email solely for sensitive personal
+                    matters not covered by the extension form.</p>
             </section>
 
             <!-- Final Thoughts -->
             <section class="section full-width-section" id="final-thoughts">
                 <h2>💫 Final Thoughts</h2>
-                <p>This course moves fast and covers a lot of ground. It will be challenging, but it will also be rewarding.</p>    
-                <p style="margin-top: 1rem;">Remember that <b>you are not alone in this journey</b> - the teaching staff and I are your resources.</p>
-                <p style="margin-top: 1rem;">We value communication and transparency, so please utilize <b><a href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed Discussion</a></b> and <b>Office Hours</b>.</p>
+                <p>This course moves fast and covers a lot of ground. It will be challenging, but it will also be
+                    rewarding.</p>
+                <p style="margin-top: 1rem;">Remember that <b>you are not alone in this journey</b> - the teaching staff
+                    and I are your resources.</p>
+                <p style="margin-top: 1rem;">We value communication and transparency, so please utilize <b><a
+                            href="https://edstem.org/us/courses/93717/discussion" target="_blank">Ed Discussion</a></b>
+                    and <b>Office Hours</b>.</p>
                 <p style="margin-top: 1rem;">Let's build something amazing together this semester.</p>
             </section>
         </div>
@@ -939,4 +1078,5 @@
         </div>
     </footer>
 </body>
+
 </html>
